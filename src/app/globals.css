@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Bascule clair/sombre pilotée par la classe .dark sur <html> (Tailwind v4) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* ---------------------------------------------------------------
+     Charte DrSan — Primaire : Bleu Royal #002AFF · Accent : Rouge #E71818
+     Aucun vert dans l'interface (fonds blancs / slate-50 uniquement).
+     --------------------------------------------------------------- */
+  --color-brand-50: #eef1ff;
+  --color-brand-100: #dde3ff;
+  --color-brand-200: #bcc7ff;
+  --color-brand-300: #94a3ff;
+  --color-brand-400: #6b7dff; /* contraste optimisé fonds sombres */
+  --color-brand-500: #3d55ff;
+  --color-brand-600: #002aff; /* Bleu Royal — couleur officielle */
+  --color-brand-700: #0021cc;
+  --color-brand-800: #001999;
+  --color-brand-900: #001166;
+  --color-brand-950: #000b40;
+
+  --color-accent: #e71818; /* Rouge vibrant — accent officiel */
+  --color-accent-50: #fdecec;
+  --color-accent-100: #fbd9d9;
+  --color-accent-400: #f26a6a; /* contraste optimisé fonds sombres */
+  --color-accent-500: #f13c3c;
+  --color-accent-600: #e71818;
+  --color-accent-700: #bc1010;
+  --color-accent-900: #7a0a0a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
